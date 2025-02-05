@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ saree.name }} - Trisha Fancy Sarees</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Trisha Fancy Sarees</h1>
+        <a href="{{ url_for('home') }}" class="back-link">Back to Home</a>
+    </header>
+    
+    <main class="detail-page">
+        <div class="saree-detail">
+            <img src="{{ saree.image_url }}" alt="{{ saree.name }}">
+            <div class="saree-info">
+                <h2>{{ saree.name }}</h2>
+                <p class="price">₹{{ saree.price }}</p>
+                <p class="description">{{ saree.description }}</p>
+                <p class="category">Category: {{ saree.category }}</p>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Trisha Fancy Sarees. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

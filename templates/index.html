@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trisha Fancy Sarees</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Trisha Fancy Sarees</h1>
+        <p>Your Destination for Traditional Indian Sarees</p>
+        <a href="{{ url_for('add_saree') }}" class="add-saree-btn" style="display: inline-block; background-color: white; color: #ff69b4; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; margin-top: 1rem;">Add New Saree</a>
+    </header>
+    
+    <main>
+        <div class="saree-grid">
+            {% for saree in sarees %}
+            <div class="saree-card">
+                <img src="{{ saree.image_url }}" alt="{{ saree.name }}">
+                <h3>{{ saree.name }}</h3>
+                <p class="price">₹{{ saree.price }}</p>
+                <a href="{{ url_for('saree_detail', id=saree.id) }}" class="view-details">View Details</a>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Trisha Fancy Sarees. All rights reserved.</p>
+    </footer>
+</body>
+</html> 

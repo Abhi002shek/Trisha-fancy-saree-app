@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: trisha-sarees-service
+spec:
+  selector:
+    app: trisha-sarees
+  ports:
+  - port: 80
+    targetPort: 5000
+  type: LoadBalancer 

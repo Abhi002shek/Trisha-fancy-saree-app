@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trisha-sarees
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: trisha-sarees
+  template:
+    metadata:
+      labels:
+        app: trisha-sarees
+    spec:
+      containers:
+      - name: trisha-sarees
+        image: trisha-sarees:latest
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+          requests:
+            cpu: "200m"
+            memory: "256Mi" 
